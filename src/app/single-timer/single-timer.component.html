@@ -1,0 +1,75 @@
+<div class="container" >
+    <div class="points" [ngClass]="cuber == 1 ? 'right' : 'left'">
+        <span>{{points}}</span>
+    </div>
+    <div class="connect-bt" [ngClass]="cuber == 1 ? 'left' : 'right'">
+        <button mat-fab color="basic" *ngIf="!timerConn" [disabled]="timerConn" matTooltip="Connect to Timer"
+                (click)="onConnectTimer()">
+                <mat-icon>bluetooth</mat-icon>
+        </button>
+        <button mat-fab color="basic" *ngIf="timerConn" [disabled]="!timerConn" matTooltip="Connect to Timer"
+            (click)="onDisconnectTimer()">
+            <mat-icon>bluetooth_disabled</mat-icon>
+        </button>
+    </div>
+    <div class="confirmed-time" [ngClass]="cuber == 1 ? 'right-big' : 'left-big'">
+        <span>{{confirmed_time}}</span>
+    </div>
+    <div class="penalties">
+        <button mat-fab color="basic"
+                (click)="ok()">
+                <mat-icon>check</mat-icon>
+        </button>
+        <button mat-fab color="basic" [disabled]="isPlusTwo"
+                (click)="plusTwo()">
+                <mat-icon>exposure_plus_2</mat-icon>
+        </button>
+        <button mat-fab color="basic" [disabled]="isDnf"
+                (click)="dnf()">
+                <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <!-- <div class="div2">
+
+    </div>
+    <div class="div3 left">
+
+    </div> -->
+    
+        <!-- <div id="buttons" [hidden]="hideControls">
+            <button mat-mini-fab color="basic" [disabled]="timerConn" matTooltip="Connect to Timer"
+                (click)="onConnectTimer()">
+                <mat-icon>bluetooth</mat-icon>
+            </button>
+            <button mat-mini-fab color="basic" [disabled]="!timerConn" matTooltip="Disconnect from Timer"
+                (click)="onDisconnectTimer()">
+                <mat-icon>bluetooth_disabled</mat-icon>
+            </button>
+        </div>
+        <div id="points" class="left" [hidden]="hideControls">
+            <button mat-mini-fab color="basic"
+                (click)="removePoint()">
+                <mat-icon><span class="material-symbols-outlined">
+                    keyboard_arrow_down
+                    </span></mat-icon>
+            </button>
+            <span class="points">{{points}}</span>
+            <button mat-mini-fab color="basic"
+                (click)="addPoint()">
+                <mat-icon><span class="material-symbols-outlined">
+                    keyboard_arrow_up
+                    </span></mat-icon>
+            </button>
+        </div>
+     -->
+    
+    <div id="lcd-time" [style.color]="lcdColor" [class.disconnected]="!timerConn">
+        <div>
+            <span class="min">{{ lcdTime.minutes }}</span>
+            <span class="delimiter">:</span>
+            <span class="sec">{{ lcdTime.seconds.toString(10).padStart(2,'0') }}</span>
+            <span class="delimiter">.</span>
+            <span class="msec">{{ lcdTime.milliseconds.toString(10).padStart(3, '0') }}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+.container {
+    border: 3px solid green;
+    display: grid;
+    height: 80vh;
+    grid-template-columns: [col1] 80px [col2] 80px [col3] auto [col4]80px [col5] 80px [col-end];
+    grid-template-rows: [row1] 80px [row2] 40px [row3] auto [row4] 100px [row-end];
+}
+#lcd-time {
+    grid-row-start: row3;
+    grid-column-start: col2;
+    justify-content: center;
+    font-size: 10vw;
+    font-family: lcd;
+}
+.left {
+    grid-column-start: col1;
+}
+.right {
+    grid-column-start: col5;
+}
+.left-big {
+    grid-column: col1/col3;
+    text-align: start;
+}
+.right-big {
+    grid-column: col4/col-end;
+    text-align: end;
+}
+.points {
+    grid-row-start: row1;
+    justify-self: stretch;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    font-size: 60px;
+    color: beige;
+}
+.confirmed-time {
+    grid-row-start: row2;
+    justify-self: stretch;
+    vertical-align: middle;
+    margin: 10px;
+    line-height: 40px;
+    font-size: 30px;
+    color: beige;
+    opacity: 70%;
+}
+.connect-bt {
+    grid-row-start: row1;
+    align-items: center;
+}
+button {
+    margin: 10px;
+}
+.penalties {
+    grid-row-start: row4;
+    grid-column-start: col3;
+    align-items: center;
+}
+
+/* #buttons {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#points {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+button {
+    margin: 5px;
+}
+.points {
+    margin: 5px;
+    margin-top: 13px;
+    color: white;
+    font-size: 3vw;
+    font-family: lcd;
+    filter: brightness(80%);
+}
+.background {
+   /* border-left: 2px solid #000000;
+   border-right: 2px solid #000000;
+   height: 80vh;
+   align-items: center; 
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  border: 3px solid green;
+}
+*/
+#lcd-time {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 300px;
+    grid-row-start: row3;
+    grid-column-start: col2;
+    font-size: 10vw;
+    font-family: lcd;
+}
+
+#lcd-time .delimiter {
+    filter: brightness(60%);
+}
+
+#lcd-time .msec {
+    font-size: 70%;
+}
+
+.disconnected {
+    opacity: 10%;
+}
+

@@ -1,0 +1,6 @@
+<div>
+    <p *ngIf="isStarted">{{scrambleText}}</p>
+    <button *ngIf="!isStarted" (click)="start()">
+        START
+    </button>
+</div>
