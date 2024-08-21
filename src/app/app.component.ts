@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Alg } from 'cubing/alg'
+import { randomScrambleForEvent } from 'cubing/scramble' 
 import {
   makeTimeFromTimestamp,
   GanTimerTime
@@ -11,8 +13,9 @@ const ZERO_TIME: GanTimerTime = makeTimeFromTimestamp(0);
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'gan-timer-battle';
+  scramble = "";
   points1 = 0;
   points2 = 0;
   time1 = ZERO_TIME;
@@ -27,6 +30,7 @@ export class AppComponent {
         this.points2++;
       this.time1 = ZERO_TIME;
       this.time2 = ZERO_TIME;
+      this.generateAlg()
     }
   }
   setTime2(time: GanTimerTime){
@@ -38,7 +42,13 @@ export class AppComponent {
         this.points2++;
       this.time1 = ZERO_TIME;
       this.time2 = ZERO_TIME;
+      this.generateAlg();
     }
   }
-
+  ngOnInit(){
+    this.generateAlg();
+  }
+  async generateAlg(){
+    await randomScrambleForEvent("333bf").then((scr) => this.scramble = scr.toString())
+  }
 }

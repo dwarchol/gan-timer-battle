@@ -1,30 +1,7 @@
 <div>
-  <app-scramble-view></app-scramble-view>
+  <app-scramble-view [scramble]="scramble"></app-scramble-view>
 </div>
 <div class="main">
   <app-single-timer [cuber]="1" [points]="points1" (sendTime)="setTime1($event)"></app-single-timer>
   <app-single-timer [cuber]="2" [points]="points2" (sendTime)="setTime2($event)"></app-single-timer>
 </div>
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-2">
-      <app-single-timer></app-single-timer>
-    </div>
-    <div class="col-2">
-      <app-single-timer></app-single-timer>
-    </div>
-  </div>
- </div> -->
-
-<!-- <div layout="row">
-  <div flex="">
-    <app-single-timer></app-single-timer>
-  </div>
-  <div flex="">
-    <app-single-timer></app-single-timer>
-  </div>
-</div> -->
-<!-- <mat-grid-list cols="2">
-  <mat-grid-tile><app-single-timer></app-single-timer></mat-grid-tile>
-  <mat-grid-tile><app-single-timer></app-single-timer></mat-grid-tile>
-</mat-grid-list> -->
