@@ -1,0 +1,1 @@
+import{a as s}from"./chunk-CH4S6UZU.js";import{a as e}from"./chunk-4GBS2WJF.js";import"./chunk-YSKS7LQL.js";import{f as o}from"./chunk-GYJWRRWW.js";e.expose&&o(void 0,null,function*(){yield import("./chunk-DZOA4DWY.js"),(globalThis.postMessage?globalThis:yield s()).postMessage("comlink-exposed")});var p=import.meta.url;export{p as WORKER_ENTRY_FILE_URL};
