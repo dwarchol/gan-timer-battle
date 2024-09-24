@@ -49,6 +49,6 @@ export class AppComponent implements OnInit{
     this.generateAlg();
   }
   async generateAlg(){
-    await randomScrambleForEvent("333bf").then((scr) => this.scramble = scr.toString())
+    await randomScrambleForEvent("sq1").then((scr) => this.scramble = scr.toString())
   }
 }
