@@ -54,7 +54,8 @@ button {
 }
 .penalties {
     grid-row-start: row4;
-    grid-column-start: col3;
+    grid-column-start: col2;
+    grid-column-end: col5;
     align-items: center;
 }
 

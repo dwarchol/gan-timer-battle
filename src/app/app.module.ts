@@ -8,14 +8,17 @@ import { SingleTimerComponent } from './single-timer/single-timer.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatSelectModule} from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ScrambleViewComponent } from './scramble-view/scramble-view.component';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SingleTimerComponent,
-    ScrambleViewComponent
+    ScrambleViewComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,7 @@ import { ScrambleViewComponent } from './scramble-view/scramble-view.component';
     MatButtonModule,
     MatIconModule,
     MatTooltipModule,
+    MatSelectModule,
     MatGridListModule
   ],
   providers: [

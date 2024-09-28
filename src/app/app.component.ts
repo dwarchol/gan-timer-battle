@@ -20,8 +20,10 @@ export class AppComponent implements OnInit{
   points2 = 0;
   time1 = ZERO_TIME;
   time2 = ZERO_TIME;
+  scrambleEvent = "333";
 
   setTime1(time: GanTimerTime){
+    console.log("Cuber 1: " + time)
     this.time1 = time;
     if(this.time2 != ZERO_TIME){
       if(this.time1 < this.time2)
@@ -34,6 +36,7 @@ export class AppComponent implements OnInit{
     }
   }
   setTime2(time: GanTimerTime){
+    console.log("Cuber 2: " + time)
     this.time2 = time;
     if(this.time1 != ZERO_TIME){
       if(this.time1 < this.time2)
@@ -45,10 +48,15 @@ export class AppComponent implements OnInit{
       this.generateAlg();
     }
   }
+  setEvent(eventName: string){
+    this.scrambleEvent = eventName;
+    this.generateAlg();
+  }
   ngOnInit(){
     this.generateAlg();
   }
   async generateAlg(){
-    await randomScrambleForEvent("333bf").then((scr) => this.scramble = scr.toString())
+    await randomScrambleForEvent(this.scrambleEvent).then((scr) => this.scramble = scr.toString())
+    console.log(this.scramble);
   }
 }

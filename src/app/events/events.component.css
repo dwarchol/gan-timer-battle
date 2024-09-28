@@ -1,13 +1,8 @@
-span {
+button {
     margin: 8px;
-    font-size: 30px;
-    line-height: 32px;
-    color: rgb(35, 35, 18);
 }
 div {
     background-color: yellowgreen   ;
     text-align: center;
     justify-content: center; 
-    padding: 10px;
-    
 }
